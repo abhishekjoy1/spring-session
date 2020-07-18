@@ -24,6 +24,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import org.springframework.session.util.SecureRandomString;
 
 /**
  * <p>
@@ -223,7 +224,7 @@ public final class MapSession implements Session, Serializable {
 	}
 
 	private static String generateId() {
-		return UUID.randomUUID().toString();
+		return SecureRandomString.generate();
 	}
 
 	private static final long serialVersionUID = 7160779239673823561L;
